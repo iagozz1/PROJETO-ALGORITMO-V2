@@ -146,28 +146,28 @@ def PdfComentarios(usuario_logado):
     import datetime
 
 
-    # Nome do arquivo PDF
+    
     nome_arquivo = "Comentarios_Fazenda.pdf"
     pdf = SimpleDocTemplate(nome_arquivo, pagesize=A4)
 
-    # Estilos
+    
     estilos = getSampleStyleSheet()
     titulo = Paragraph("📊 Relatório de Comentários da Fazenda", estilos['Title'])
     subtitulo = Paragraph("Usuários, Comentários e Datas", estilos['Heading2'])
     espacamento = Spacer(1, 20)
 
-    # Cabeçalho da tabela
+    
     dados = [["Usuário", "Comentário", "Data"]]
 
-    # Adiciona os comentários registrados
+    
     for usuario, info in comentarios.items():
         data_atual = datetime.datetime.now().strftime("%d/%m/%Y %H:%M")
         dados.append([usuario, info['Comentário'], data_atual])
 
-    # Criação da tabela
+    
     tabela = Table(dados, colWidths=[150, 250, 120])
 
-    # Estilo da tabela
+    
     estilo_tabela = TableStyle([
         ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#FF5733")),  # Cabeçalho vibrante
         ('TEXTCOLOR', (0,0), (-1,0), colors.white),
@@ -180,7 +180,7 @@ def PdfComentarios(usuario_logado):
     ])
     tabela.setStyle(estilo_tabela)
 
-    # Monta o PDF
+    
     elementos = [titulo, subtitulo, espacamento, tabela]
     pdf.build(elementos)
     Registrar("Gerou PDF de comentários", usuarios[usuario_logado]['Nome'], tipo=usuarios[usuario_logado]['Tipo'])
