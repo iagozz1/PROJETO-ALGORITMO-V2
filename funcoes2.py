@@ -169,13 +169,13 @@ def PdfComentarios(usuario_logado):
 
     
     estilo_tabela = TableStyle([
-        ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#FF5733")),  # Cabeçalho vibrante
+        ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#FF5733")), 
         ('TEXTCOLOR', (0,0), (-1,0), colors.white),
         ('ALIGN', (0,0), (-1,-1), 'CENTER'),
         ('FONTNAME', (0,0), (-1,0), 'Helvetica-Bold'),
         ('FONTSIZE', (0,0), (-1,0), 14),
         ('BOTTOMPADDING', (0,0), (-1,0), 12),
-        ('BACKGROUND', (0,1), (-1,-1), colors.HexColor("#FDEDEC")),  # Linhas com fundo suave
+        ('BACKGROUND', (0,1), (-1,-1), colors.HexColor("#FDEDEC")), 
         ('GRID', (0,0), (-1,-1), 1, colors.black),
     ])
     tabela.setStyle(estilo_tabela)
