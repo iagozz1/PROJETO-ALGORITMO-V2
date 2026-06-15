@@ -1,4 +1,4 @@
-usuarios = {'otavio':{'Nome':'otavio','Senha':'123','Tipo':'adm'}, 'ota':{'Nome':'ota','Senha':'123','Tipo':'cliente'}}
+usuarios = {}
 def Cadastro():
     cadastro = False
     caracteres_especiais = ['!', '@', '#', '$', '%', '&', '*', ',', '.']
